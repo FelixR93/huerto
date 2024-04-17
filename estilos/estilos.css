@@ -5,29 +5,66 @@ body {
     background-attachment: fixed;
     font-family: Arial, sans-serif;
     color: #000000;
-    padding-top: 70px;
+    padding-top: 100px;
 }
 
-.container {
+.container {   
+    position: relative;
+    width: 100%;
+    max-width: 1200px;     
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-header, footer {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #343a40;
-    color: #ffffff;
+    color: #ffffff;    
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.servicio img {
+    width: 100%;
+    max-width: 300%;
+    height: auto;
+    max-height: 200px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.col-md-3 {
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
     padding: 10px 0;
 }
 
 .logo {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
 }
 
-header .logo img {
+.logo img {
     width: 120px;
-    height: 100px;
+    height: 100px;    
 }
 
 img {
@@ -35,15 +72,35 @@ img {
     border-radius: 10px;
 }
 
+.search-form {
+    display: flex;
+    align-items: center;
+}
+.search-form input[type="search"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ca5151;
+    margin-right: 10px;
+}
+.search-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    text-align: justify;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline;    
     margin-right: 20px;
 }
 
@@ -123,7 +180,7 @@ input[type="submit"]:hover {
 /* Estilos específicos de footer */
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 footer p {
@@ -131,3 +188,8 @@ footer p {
     margin: 0;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
